@@ -16,10 +16,10 @@ app.use(express.json());
 
 // PostgreSQL setup
 const pool = new Pool({
-    user: 'file_processor_owner',
-    host: 'ep-fragrant-surf-a5apfbpy.us-east-2.aws.neon.tech',
-    database: 'file_processor', // Default database
-    password: 'K6rwBEpzQ9Af',
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
     port: 5432,
     ssl: {
         rejectUnauthorized: false,  // NeonDB typically requires SSL
